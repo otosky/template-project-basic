@@ -18,6 +18,11 @@ python_working_version:
     type: str
     help: What version of Python will you use for development?
 
+enable_gha:
+    type: bool
+    default: true
+    help: Add Github Actions?
+
 enable_docs:
     type: bool
     default: true
