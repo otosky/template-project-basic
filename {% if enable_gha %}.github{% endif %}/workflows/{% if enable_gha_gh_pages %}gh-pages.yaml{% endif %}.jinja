@@ -10,8 +10,10 @@ jobs:
     runs-on: ubuntu-22.04
     permissions:
       contents: write
+    {% raw -%}
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
+    {% endraw -%}
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
 
@@ -34,6 +36,8 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@373f7f263a76c20808c831209c920827a82a2847 # v3
+        {% raw -%}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
+        {% endraw -%}
