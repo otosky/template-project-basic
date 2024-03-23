@@ -1,0 +1,52 @@
+# Project
+site_name: {{ github_repo_owner }} | {{ github_repo_name }}
+site_url: https://{{ github_repo_owner }}.github.io/{{ github_repo_name }}/
+
+# Repository
+repo_name: {{ github_repo_owner }}/{{ github_repo_name }}
+repo_url: https://github.com/{{ github_repo_owner }}/{{ github_repo_name }}
+edit_uri: ""
+
+# Config
+docs_dir: ./docs
+theme:
+  name: material
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  icon:
+    repo: fontawesome/brands/github-alt
+  language: en
+  font: false
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+# Navigation
+nav:
+  - index.md
+
