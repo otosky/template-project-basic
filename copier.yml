@@ -1,0 +1,40 @@
+project_name:
+    type: str
+    help: What is your project name?
+
+project_author_name:
+    type: str
+    help: Provide a full name for the project owner.
+
+project_author_email:
+    type: str
+    help: Provide an email address for the project owner.
+
+python_min_version:
+    type: float
+    help: What is the Python minimum version?
+
+python_working_version:
+    type: str
+    help: What version of Python will you use for development?
+
+enable_docs:
+    type: bool
+    default: true
+    help: Add boilerplate for mkdocs?
+
+github_repo_owner:
+    type: str
+    when: "{{ enable_docs }}"
+    help: Who is the Github repo owner?
+
+github_repo_name:
+    type: str
+    when: "{{ enable_docs }}"
+    help: What is the Github repo name?
+
+enable_gha_gh_pages:
+    type: bool
+    when: "{{ enable_docs }}"
+    help: Add GHA to build Github Pages on deploy to main?
+
